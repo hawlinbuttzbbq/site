@@ -1,4 +1,5 @@
 export type SiteSettingsType = {
+  showSocialChannels: boolean;
   address2: string;
   favicon: {
     _type: string;
