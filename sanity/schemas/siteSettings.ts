@@ -40,13 +40,14 @@ export default {
       title: "Address line 4",
       type: "string",
     },
-    {
-      name: "chatWidget",
-      title: "Chat javascript code",
-      type: "text",
-      description:
-        "Will open a chat window where your customers can chat with you live (provider: FreshChat)",
-    },
+    // TODO: Add feature to embed chat widget
+    // {
+    //   name: "chatWidget",
+    //   title: "Chat javascript code",
+    //   type: "text",
+    //   description:
+    //     "Will open a chat window where your customers can chat with you live (provider: FreshChat)",
+    // },
     {
       name: "showSocialChannels",
       title: "Do you want to show Social Media channels",
