@@ -1,8 +1,8 @@
-import { MessageCircle } from "lucide-react";
-import React from "react";
-import ContactPopover from "./ContactPopover";
-import { SiteSettingsType } from "../_types/siteSettings";
+import { Bookmark } from "lucide-react";
 import { urlForImage } from "../_lib/sanity";
+import { SiteSettingsType } from "../_types/siteSettings";
+import ContactPopover from "./ContactPopover";
+import ShareLinkBtn from "./ShareLinkBtn";
 
 interface AppHeaderType {
   data: SiteSettingsType;
@@ -32,11 +32,11 @@ const AppHeader = (props: AppHeaderType) => {
             <span style={{ fontSize: "12px" }}>{props.data.address4}</span>
           </div>
           <div className="hidden lg:flex border-l h-[48px]"></div>
-          <MessageCircle className="hidden lg:flex text-white h-8 w-8" />
+          <ShareLinkBtn className="hidden lg:flex text-white h-8 w-8" />
         </div>
         <div className="absolute right-4 flex flex-row space-x-4  lg:hidden">
           <ContactPopover className="text-white h-8 w-8" />
-          <MessageCircle className="text-white h-8 w-8" />
+          <ShareLinkBtn className="text-white h-8 w-8" />
         </div>
       </div>
     </header>
