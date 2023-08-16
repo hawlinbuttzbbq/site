@@ -1,4 +1,4 @@
-export type SiteSettings = {
+export type SiteSettingsType = {
   address2: string;
   favicon: {
     _type: string;
