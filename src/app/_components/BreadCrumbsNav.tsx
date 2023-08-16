@@ -3,21 +3,20 @@ import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import { ChevronLeft } from "lucide-react";
+import { CONFIG } from "@/constains";
 
 interface BreadCrumbsNavProps {
   breadCrumb: string;
 }
 
 export default function BreadcrumbsNav(props: BreadCrumbsNavProps) {
+  const { baseUrl, baseUrlDev } = CONFIG;
+  const url = process.env.NODE_ENV === "development" ? baseUrlDev : baseUrl;
+
   return (
     <div role="presentation" className="py-2 md:py-4">
       <Breadcrumbs aria-label="breadcrumb">
-        <Link
-          underline="hover"
-          color="inherit"
-          // TODO: Change the link back to "/" when you move this to production
-          href="https://jerryseigle.github.io/hawlin-buttz-bbq/"
-        >
+        <Link underline="hover" color="inherit" href={url}>
           <span className="text-red-600 font-bold flex items-center">
             <ChevronLeft />
             BACK TO MENU
