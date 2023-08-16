@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "sanity-deploy": "sanity deploy",
     "lint": "next lint"
   },
   "dependencies": {

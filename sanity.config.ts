@@ -6,9 +6,9 @@ import { myStructure } from "./sanity/deskStructure";
 
 export default defineConfig({
   name: "default",
-  title: "HawlinButtzBbqTest",
+  title: "HawlinButtzBbq",
 
-  projectId: "yx0g88in",
+  projectId: "m6geqkpr",
   dataset: "production",
   basePath: "/admin",
 
