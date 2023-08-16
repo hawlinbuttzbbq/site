@@ -5,9 +5,11 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { MapPin } from "lucide-react";
 import Button from "@mui/material/Button";
+import { SiteSettingsType } from "../_types/siteSettings";
 
 interface ContactPopoverProps {
   className?: string;
+  data: SiteSettingsType;
 }
 
 export default function ContactPopover(props: ContactPopoverProps) {
@@ -51,10 +53,10 @@ export default function ContactPopover(props: ContactPopoverProps) {
         }}
       >
         <Box sx={{ p: 2 }}>
-          <Typography>1503 Kelly's Landing Dr.</Typography>
-          <Typography>Mount Holly NC 28120</Typography>
-          <Typography>(704) 622-1772</Typography>
-          <Typography>LMatthews2131@gmail.com</Typography>
+          <Typography>{props.data.address1}</Typography>
+          <Typography>{props.data.address2}</Typography>
+          <Typography>{props.data.address3}</Typography>
+          <Typography>{props.data.address4}</Typography>
         </Box>
         <Button
           sx={{ display: "flex", justifyContent: "center" }}

@@ -5,6 +5,7 @@ import ContactPopover from "./ContactPopover";
 import ShareLinkBtn from "./ShareLinkBtn";
 import Link from "next/link";
 import { CONFIG } from "@/constains";
+import { data } from "autoprefixer";
 
 interface AppHeaderType {
   data: SiteSettingsType;
@@ -42,7 +43,7 @@ const AppHeader = (props: AppHeaderType) => {
           <ShareLinkBtn className="hidden lg:flex text-white h-8 w-8" />
         </div>
         <div className="absolute right-4 flex flex-row space-x-4  lg:hidden">
-          <ContactPopover className="text-white h-8 w-8" />
+          <ContactPopover data={props.data} className="text-white h-8 w-8" />
           <ShareLinkBtn className="text-white h-8 w-8" />
         </div>
       </div>
