@@ -22,6 +22,7 @@ export default function MenuItemCard(props: MenuItemCardProps) {
           <CardMedia
             component="img"
             height="140"
+            className="max-h-[200px]"
             image={props.image}
             alt={props.title}
           />
