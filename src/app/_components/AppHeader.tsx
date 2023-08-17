@@ -28,7 +28,7 @@ const AppHeader = (props: AppHeaderType) => {
             <img
               src={urlForImage(props.data.logoMobile.asset._ref).url()}
               alt="Logo"
-              className="sm:w-[166px] sm:h-[50px] lg:hidden"
+              className="w-[166px] h-[50px] lg:hidden"
             />
           </div>
         </Link>
