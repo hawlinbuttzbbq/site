@@ -12,7 +12,7 @@ interface MenuTabNavbarProps {
 
 export default function MenuTabNavbar(props: MenuTabNavbarProps) {
   return (
-    <Box sx={{ position: "sticky", bgcolor: "rgb(242, 239, 234)" }}>
+    <Box sx={{ bgcolor: "rgb(242, 239, 234)" }}>
       <Tabs
         // value={value}
         // onChange={handleChange}

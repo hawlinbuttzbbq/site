@@ -16,7 +16,7 @@ const AppHeader = (props: AppHeaderType) => {
   const url = process.env.NODE_ENV === "development" ? baseUrlDev : baseUrl;
 
   return (
-    <header className="bg-[#212529] border-b border-white sm:h-[77px] lg:h-[91px]">
+    <header className="sticky top-0 z-40 bg-[#212529] border-b border-white sm:h-[77px] lg:h-[91px]">
       <div className="container mx-auto px-10 flex justify-center items-center h-full lg:justify-between max-w-none">
         <Link href={url}>
           <div className="flex items-center">

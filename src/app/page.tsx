@@ -24,7 +24,11 @@ export default async function HomePage() {
 
   return (
     <div>
-      <MenuTabNavbar data={menuByCategories} />
+      {/* For sticky MenuTabNavbar to work the position top mus match the AppHeader height */}
+      <div className="sticky sm:top-[77px] lg:top-[91px]">
+        <MenuTabNavbar data={menuByCategories} />
+      </div>
+
       <main className="flex min-h-screen flex-col items-center justify-between">
         {menuByCategories.map((category) => (
           <>
