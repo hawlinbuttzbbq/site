@@ -1,4 +1,5 @@
 import React from "react";
+import { PortableText } from "@portabletext/react";
 import { MenuItemType } from "../_types/menuApiResponse";
 import { urlForImage } from "../_lib/sanity";
 
@@ -28,7 +29,13 @@ const MenuItemDetailsCard = (props: MenuItemDetailsCardProps) => {
       >
         <h1 className="text-2xl font-bold mb-2">{props.data.title}</h1>
         <p className="text-gray-600 mb-6">{`Starting price $${props.data.price}`}</p>
-        <p className="text-gray-800">{props.data?.body[0].children[0].text}</p>
+        {/* <p className="text-gray-800">{props.data?.body[0].children[0].text}</p> */}
+        {props.data.body.map((children) => (
+          <PortableText
+            value={children}
+            // components={/* optional object of custom components to use */}
+          />
+        ))}
       </div>
     </div>
   );
