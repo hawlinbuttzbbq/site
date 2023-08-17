@@ -1,7 +1,8 @@
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
+import { CONFIG } from "@/constains";
 
-const projectId = "yx0g88in";
+const projectId = CONFIG.projectId;
 const dataset = "production";
 const apiVersion = "2023-01-01";
 
