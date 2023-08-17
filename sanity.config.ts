@@ -3,14 +3,14 @@ import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 import { myStructure } from "./sanity/deskStructure";
-import { CONFIG } from "@/constains";
+// import { CONFIG } from "@/constains";
 import { improvedPublishAction } from "./sanity/improvedPublishAction";
 
 export default defineConfig({
   name: "default",
   title: "HawlinButtzBbq",
 
-  projectId: CONFIG.projectId,
+  projectId: "m6geqkpr",
   dataset: "production",
   basePath: "/admin",
   useCdn: false, // if you're using ISR or only static generation at build time then you can set this to `false` to guarantee no stale content
