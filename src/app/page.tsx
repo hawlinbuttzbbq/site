@@ -20,7 +20,6 @@ async function getMenu() {
 
 export default async function HomePage() {
   const menuByCategories = await getMenu();
-  console.log(JSON.stringify(menuByCategories));
 
   return (
     <div>
