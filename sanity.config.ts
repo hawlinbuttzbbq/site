@@ -4,6 +4,7 @@ import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 import { myStructure } from "./sanity/deskStructure";
 import { CONFIG } from "@/constains";
+import { improvedPublishAction } from "./sanity/improvedPublishAction";
 
 export default defineConfig({
   name: "default",
@@ -23,5 +24,14 @@ export default defineConfig({
 
   schema: {
     types: schemaTypes,
+  },
+
+  document: {
+    actions: (prev) =>
+      prev.map((originalAction) =>
+        originalAction.action === "publish"
+          ? improvedPublishAction(originalAction)
+          : originalAction
+      ),
   },
 });
