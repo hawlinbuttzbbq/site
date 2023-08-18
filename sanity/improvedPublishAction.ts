@@ -1,13 +1,18 @@
+import { useToast } from "@sanity/ui";
+
 export function improvedPublishAction(originalPublishAction: any) {
+  const toast = useToast();
+
   const BetterAction = (props: any) => {
     const originalResult = originalPublishAction(props);
     return {
       ...originalResult,
       onHandle: () => {
         // Add our custom functionality
-        window.alert(
-          "👋 It may take up to 5 minutes Before website reflects this change!"
-        );
+        toast.push({
+          status: "info",
+          title: "It may take up to 5 minutes before website update!",
+        });
         // then delegate to original handler
         originalResult.onHandle();
       },
