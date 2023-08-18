@@ -50,6 +50,8 @@ export default defineType({
       name: "mainImage",
       title: "Main image",
       type: "image",
+      description:
+        "For optimize appearance, all images should be square shaped or same size. example:(500px x 500px) ",
       options: {
         hotspot: true,
       },
