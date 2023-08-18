@@ -16,6 +16,8 @@ export default defineType({
       title: "Slug",
       name: "slug",
       type: "slug",
+      description:
+        "Slugs are used as the page url. (NOTE: only lower case letters, numbers, & - are allowed)",
       options: {
         source: "title",
         maxLength: 200, // will be ignored if slugify is set
