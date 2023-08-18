@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import PriceInput from "../components/PriceInput";
 
 export default defineType({
   name: "menuItem",
@@ -18,10 +19,30 @@ export default defineType({
       options: {
         source: "title",
         maxLength: 200, // will be ignored if slugify is set
-        slugify: (input: string) =>
-          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+        slugify: (input: string) => {
+          const sanitized = input
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^a-zA-Z0-9-]/g, "")
+            .slice(0, 200);
+          return sanitized;
+        },
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => [
+        Rule.required(),
+        Rule.custom((name: { _type: string; current: string }) => {
+          // This would crash if we didn't check
+          // for undefined values first
+          if (typeof name === "undefined") {
+            return true; // Allow undefined values
+          }
+
+          let hasSpecialCharacters = /[^\na-z0-9-]/g.test(name.current);
+          return hasSpecialCharacters
+            ? "Your slug has characters that are not allowed"
+            : true;
+        }),
+      ],
     },
     defineField({
       name: "mainImage",
@@ -48,7 +69,11 @@ export default defineType({
       title: "Price",
       description: "Example: 2.99 (Do not $)",
       type: "number",
-      validation: (Rule) => Rule.required().positive().precision(2),
+      // validation: (Rule) => Rule.required().positive().precision(2),
+      components: {
+        // input: PriceInput,
+        // field: PriceInput,
+      },
     }),
     defineField({
       title: "Is this a NEW item",
