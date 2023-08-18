@@ -2,9 +2,9 @@ import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
-import { myStructure } from "./sanity/deskStructure";
+import { myStructure } from "./sanity/structures/deskStructure";
 // import { CONFIG } from "@/constains";
-import { improvedPublishAction } from "./sanity/improvedPublishAction";
+import { improvedPublishAction } from "./sanity/actions/improvedPublishAction";
 
 export default defineConfig({
   name: "default",
