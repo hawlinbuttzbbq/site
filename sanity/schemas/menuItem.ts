@@ -21,6 +21,7 @@ export default defineType({
         slugify: (input: string) =>
           input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
       },
+      validation: (Rule) => Rule.required(),
     },
     defineField({
       name: "mainImage",
@@ -47,7 +48,7 @@ export default defineType({
       title: "Price",
       description: "Example: 2.99 (Do not $)",
       type: "number",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().positive().precision(2),
     }),
     defineField({
       title: "Is this a NEW item",
