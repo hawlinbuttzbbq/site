@@ -12,12 +12,12 @@ export interface MenuItemType {
   mainImage: MainImage;
   _createdAt: Date;
   categories: Category[];
-  featured?: boolean;
+  featured?: boolean; // isNew. Shows the new icon
+  showFirst?: boolean;
   _type: string;
   title: string;
   price: number;
   _id: string;
-  showFirst?: boolean;
   _updatedAt: Date;
   slug: Slug;
   publishedAt?: Date;

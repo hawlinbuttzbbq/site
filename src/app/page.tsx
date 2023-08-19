@@ -33,13 +33,22 @@ export default async function HomePage() {
           <>
             <SectionDivider divId={category.title} title={category.title} />
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mx-2">
-              {category.menuItems?.map((item) => (
+              {/* Filter and merge items */}
+              {[
+                ...category.menuItems.filter(
+                  (item) => item.featured && item.showFirst
+                ),
+                ...category.menuItems.filter(
+                  (item) => !item.featured || !item.showFirst
+                ),
+              ].map((item) => (
                 <MenuItemCard
                   key={item._id}
                   title={item.title}
                   slug={item.slug.current}
                   image={urlForImage(item.mainImage.asset._ref).url()}
                   price={item.price}
+                  isFeatured={item.featured}
                 />
               ))}
             </div>

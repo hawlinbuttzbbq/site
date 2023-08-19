@@ -5,6 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import Badge from "@mui/material/Badge";
+import FiberNewIcon from "@mui/icons-material/FiberNew";
 import Link from "next/link";
 import { formatPrice } from "../_utils/formatPrice";
 
@@ -13,6 +15,7 @@ interface MenuItemCardProps {
   title: string;
   price: number;
   image: string;
+  isFeatured: boolean | undefined;
 }
 
 export default function MenuItemCard(props: MenuItemCardProps) {
@@ -20,6 +23,18 @@ export default function MenuItemCard(props: MenuItemCardProps) {
     <Card sx={{ maxWidth: 345, backgroundColor: "rgb(242, 239, 234)" }}>
       <Link href={`/menu-item-details/${props.slug}`}>
         <CardActionArea>
+          {props.isFeatured && (
+            <FiberNewIcon
+              fontSize="large"
+              color="error"
+              sx={{
+                position: "absolute",
+                backgroundColor: "white",
+                borderRadius: 1,
+              }}
+            />
+          )}
+
           <CardMedia
             component="img"
             height="140"
