@@ -4,7 +4,7 @@ import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 import { myStructure } from "./sanity/structures/deskStructure";
 // import { CONFIG } from "@/constains";
-import { improvedPublishAction } from "./sanity/actions/improvedPublishAction";
+import { createImprovedAction } from "./sanity/actions/createImprovedAction";
 
 export default defineConfig({
   name: "default",
@@ -28,10 +28,6 @@ export default defineConfig({
 
   document: {
     actions: (prev) =>
-      prev.map((originalAction) =>
-        originalAction.action === "publish"
-          ? improvedPublishAction(originalAction)
-          : originalAction
-      ),
+      prev.map((originalAction) => createImprovedAction(originalAction)),
   },
 });

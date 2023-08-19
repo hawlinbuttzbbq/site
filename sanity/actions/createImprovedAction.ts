@@ -1,8 +1,8 @@
 import { useToast } from "@sanity/ui";
 
-export function improvedPublishAction(originalPublishAction: any) {
-  const toast = useToast();
+const toast = useToast();
 
+export function createImprovedAction(originalPublishAction: any) {
   const BetterAction = (props: any) => {
     const originalResult = originalPublishAction(props);
     return {
