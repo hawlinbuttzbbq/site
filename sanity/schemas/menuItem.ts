@@ -1,5 +1,4 @@
 import { defineField, defineType } from "sanity";
-import PriceInput from "../components/PriceInput";
 
 export default defineType({
   name: "menuItem",
@@ -73,11 +72,7 @@ export default defineType({
       title: "Price",
       description: "Example: 2.99 (Do not $)",
       type: "number",
-      // validation: (Rule) => Rule.required().positive().precision(2),
-      components: {
-        // input: PriceInput,
-        // field: PriceInput,
-      },
+      validation: (Rule) => Rule.required().positive().precision(2),
     }),
     defineField({
       title: "Is this a NEW item",
