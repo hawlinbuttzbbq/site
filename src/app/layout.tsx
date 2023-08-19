@@ -29,6 +29,7 @@ async function getSiteSettings() {
 export async function generateMetadata(): Promise<Metadata> {
   const siteSettings = await getSiteSettings();
   const favicon = urlForImage(siteSettings.favicon.asset._ref).url();
+  const keywords = siteSettings?.keywords || [siteSettings.title];
 
   return {
     title: siteSettings.title,
@@ -37,6 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
       icon: favicon,
       apple: favicon,
     },
+    keywords,
   };
 }
 

@@ -100,5 +100,11 @@ export default {
       description: "This is the icon that shows on browser tabs",
       type: "image",
     },
+    {
+      name: "keywords",
+      title: "Keywords",
+      description: "A method to help search engines find you",
+      type: "string",
+    },
   ],
 };
