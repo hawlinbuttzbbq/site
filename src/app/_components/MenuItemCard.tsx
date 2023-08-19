@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import Link from "next/link";
+import { formatPrice } from "../_utils/formatPrice";
 
 interface MenuItemCardProps {
   slug: string;
@@ -37,7 +38,7 @@ export default function MenuItemCard(props: MenuItemCardProps) {
               {props.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {`Starting at $${props.price}`}
+              {`Starting at ${formatPrice(props.price)}`}
               {/* Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica */}
             </Typography>

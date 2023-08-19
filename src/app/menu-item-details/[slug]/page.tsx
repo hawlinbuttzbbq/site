@@ -4,6 +4,15 @@ import SideOptions from "@/app/_components/SideOptions";
 import { client } from "@/app/_lib/sanity";
 import { MenuApiResponse, MenuItemType } from "@/app/_types/menuApiResponse";
 
+// Set Page meta data
+export async function generateMetadata({ params }: MenuItemPageProps) {
+  const metaData = await getMenuItem(params.slug);
+
+  return {
+    title: metaData.title,
+  };
+}
+
 // Used because we are export project as static page fetch data here
 export async function generateStaticParams() {
   const query = `*[_type == "menuItem"]`;
@@ -25,9 +34,7 @@ async function getMenuItem(slug: string) {
 }
 
 async function getSideOptions() {
-  const query = `*[_type == "category" && title == "Sides"]{
-    _id,
-    title,
+  const query = `*[_type == "category"]{
     isSides,
     "menuItems": *[_type == "menuItem" && references(^._id)]
     }`;
