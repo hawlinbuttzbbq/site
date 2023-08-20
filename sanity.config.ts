@@ -28,6 +28,10 @@ export default defineConfig({
 
   document: {
     actions: (prev) =>
-      prev.map((originalAction) => createImprovedAction(originalAction)),
+      prev.map((originalAction) =>
+        originalAction.action === "publish"
+          ? createImprovedAction(originalAction)
+          : originalAction
+      ),
   },
 });
