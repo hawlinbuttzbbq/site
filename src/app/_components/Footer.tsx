@@ -1,5 +1,6 @@
 import React from "react";
 import { SiteSettingsType } from "../_types/siteSettings";
+import Link from "next/link";
 
 interface FooterProps {
   data: SiteSettingsType;
@@ -110,7 +111,8 @@ const Footer = (props: FooterProps) => {
       )}
       <p className="text-center text-gray-600">
         &copy; {currentYear} All rights reserved. Site by Hawlin Buttz BBQ LLC.
-        Developed by JERRY SEIGLE.
+        <Link href="https://hawlinbuttzbbq.sanity.studio"> Developed</Link> by
+        JERRY SEIGLE.
       </p>
     </footer>
   );
