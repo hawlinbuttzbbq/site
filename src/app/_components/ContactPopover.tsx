@@ -3,7 +3,7 @@ import * as React from "react";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { MapPin } from "lucide-react";
+import { Phone } from 'lucide-react';
 import Button from "@mui/material/Button";
 import { SiteSettingsType } from "../_types/siteSettings";
 
@@ -28,16 +28,16 @@ export default function ContactPopover(props: ContactPopoverProps) {
   const open = Boolean(anchorEl);
   const id = open ? "contact-us-popover" : undefined;
 
-  const openInMaps = () => {
-    //TODO: Google Maps Later add method to make this dynamic from backend instead of hardcoded
-    window.open(
-      "https://www.google.com/maps/dir/35.3334705,-81.0644256/1503+Kellys+Landing+Drive,+Mt+Holly,+NC+28120/@35.3308332,-81.076673,15z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8856bbfd3d8e2119:0x709af59820607c78!2m2!1d-81.0736133!2d35.332837?entry=ttu"
-    );
-  };
+  // const openInMaps = () => {
+  //   //TODO: Google Maps Later add method to make this dynamic from backend instead of hardcoded
+  //   window.open(
+  //     "https://www.google.com/maps/dir/35.3334705,-81.0644256/1503+Kellys+Landing+Drive,+Mt+Holly,+NC+28120/@35.3308332,-81.076673,15z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8856bbfd3d8e2119:0x709af59820607c78!2m2!1d-81.0736133!2d35.332837?entry=ttu"
+  //   );
+  // };
 
   return (
     <div>
-      <MapPin
+      <Phone
         aria-describedby={id}
         className={props.className}
         onClick={handleClick}
@@ -58,12 +58,12 @@ export default function ContactPopover(props: ContactPopoverProps) {
           <Typography>{props.data.address3}</Typography>
           <Typography>{props.data.address4}</Typography>
         </Box>
-        <Button
+        {/* <Button
           sx={{ display: "flex", justifyContent: "center" }}
           onClick={openInMaps}
         >
           Get Directions
-        </Button>
+        </Button> */}
       </Popover>
     </div>
   );
