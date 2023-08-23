@@ -3,7 +3,7 @@ import * as React from "react";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Phone } from 'lucide-react';
+import { Phone } from "lucide-react";
 import Button from "@mui/material/Button";
 import { SiteSettingsType } from "../_types/siteSettings";
 

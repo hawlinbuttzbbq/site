@@ -43,8 +43,11 @@ const AppHeader = (props: AppHeaderType) => {
           <ShareLinkBtn className="hidden lg:flex text-white h-8 w-8" />
         </div>
         <div className="absolute right-4 flex flex-row space-x-4  lg:hidden">
-          <ContactPopover data={props.data} className="text-white h-8 w-8" />
-          <ShareLinkBtn className="text-white h-8 w-8" />
+          <ContactPopover
+            data={props.data}
+            className="text-white h-6 w-8 lg:h-8"
+          />
+          <ShareLinkBtn className="text-white h-6 w-8 lg:h-8" />
         </div>
       </div>
     </header>
