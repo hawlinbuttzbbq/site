@@ -24,7 +24,7 @@ export default async function HomePage() {
   return (
     <div>
       {/* For sticky MenuTabNavbar to work the position top mus match the AppHeader height */}
-      <div className="sticky z-40 sm:top-[77px] lg:top-[91px]">
+      <div className="sticky z-40 top-[110px] md:top-[160px] lg:top-[180px]">
         <MenuTabNavbar data={menuByCategories} />
       </div>
 
