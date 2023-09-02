@@ -35,11 +35,6 @@ export default {
       title: "Address line 3",
       type: "string",
     },
-    {
-      name: "address4",
-      title: "Address line 4",
-      type: "string",
-    },
     // TODO: Add feature to embed chat widget
     // {
     //   name: "chatWidget",

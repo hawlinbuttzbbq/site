@@ -1,7 +1,6 @@
 export type SiteSettingsType = {
   keywords?: string;
   showSocialChannels: boolean;
-  address2: string;
   favicon: {
     _type: string;
     asset: {
@@ -12,9 +11,10 @@ export type SiteSettingsType = {
   socialX: string;
   _createdAt: string;
   description: string;
-  address4: string;
   _updatedAt: string;
   address1: string;
+  address2: string;
+  address3: string;
   _rev: string;
   socialYoutube: string;
   socialFacebook: string;
@@ -27,7 +27,6 @@ export type SiteSettingsType = {
       _type: string;
     };
   };
-  address3: string;
   logoMobile: {
     _type: string;
     asset: {
