@@ -3,6 +3,7 @@ import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 import { myStructure } from "./sanity/structures/deskStructure";
+import { codeInput } from "@sanity/code-input";
 // import { CONFIG } from "@/constains";
 import { createImprovedAction } from "./sanity/actions/createImprovedAction";
 
@@ -20,6 +21,7 @@ export default defineConfig({
       structure: myStructure,
     }),
     visionTool(),
+    codeInput(),
   ],
 
   schema: {

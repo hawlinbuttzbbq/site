@@ -83,12 +83,12 @@ export default {
       description: "use any image file. (For best results use .svg)",
       type: "image",
     },
-    {
-      name: "logoMobile",
-      title: "Logo for mobile devices",
-      description: "use any image file. (For best results use .svg)",
-      type: "image",
-    },
+    // {
+    //   name: "logoMobile",
+    //   title: "Logo for mobile devices",
+    //   description: "use any image file. (For best results use .svg)",
+    //   type: "image",
+    // },
     {
       name: "favicon",
       title: "Favicon [16px x 16px]",
