@@ -1,8 +1,14 @@
 import { client, urlForImage } from "@/app/_lib/sanity";
 import { CompanyPagesType } from "@/app/_types/pagesType";
-import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
 import Link from "next/link";
+import { PortableText } from "@portabletext/react";
+import doc from "../doc.json";
+import { PortableTextBlock } from "sanity";
+
+interface CompanyPagesProps {
+  params: { slug: string };
+}
 
 // // Set Page meta data
 // export async function generateMetadata({ params }: MenuItemPageProps) {
@@ -34,10 +40,7 @@ async function getData(slug: string) {
   return data;
 }
 
-interface CompanyPagesProps {
-  params: { slug: string };
-}
-
+// PortableText Image Component
 const ImageComponent = ({ value, isInline }: any) => {
   const { width, height } = getImageDimensions(value);
   return (
@@ -47,21 +50,54 @@ const ImageComponent = ({ value, isInline }: any) => {
       width={width}
       height={height}
       sizes="50vw"
+      className="p-10"
     />
   );
 };
 
+// PortableText Internal Link Component
 const InternalLink = ({ children, value }: any) => (
   <Link href={`/${value.slug.current}`} prefetch={false}>
-    <a>{children}</a>
+    <span>{children}</span>
   </Link>
 );
 
-const myPortableTextComponents = {
+// `components` object you'll pass to PortableText
+const components: any = {
   types: {
     image: ImageComponent,
-    list: ImageComponent,
   },
+
+  block: {
+    // Ex. 1: customizing common block types
+    h1: ({ children }) => <h1 className="text-2xl mb-5">{children}</h1>,
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-purple-500">{children}</blockquote>
+    ),
+    span: ({ children }) => <span className="mb-5">{children}</span>,
+    p: ({ children }) => <p className="mb-5">{children}</p>,
+
+    // Ex. 2: rendering custom styles
+    customHeading: ({ children }) => (
+      <h2 className="text-lg text-primary text-purple-700">{children}</h2>
+    ),
+  },
+
+  list: {
+    // Ex. 1: customizing common list types
+    bullet: ({ children }) => (
+      <ul className="list-disc ml-8 mb-5">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="list-decimal ml-8 mb-5">{children}</ol>
+    ),
+
+    // Ex. 2: rendering custom lists
+    checkmarks: ({ children }) => (
+      <ol className="m-auto text-lg">{children}</ol>
+    ),
+  },
+
   marks: {
     internalLink: InternalLink,
   },
@@ -73,13 +109,11 @@ export default async function Company({ params }: CompanyPagesProps) {
   const data = await getData(slug);
 
   return (
-    <main className="flex min-h-screen flex-col">
-      <div className="p-5">
-        {/* <BreadcrumbsNav breadCrumb={data.title} /> */}
-
+    <main className="flex min-h-screen flex-col p-10">
+      <div className="reset-all-styles">
         <PortableText
-          value={data.content}
-          components={myPortableTextComponents}
+          value={doc.content}
+          // components={components}
         />
       </div>
     </main>

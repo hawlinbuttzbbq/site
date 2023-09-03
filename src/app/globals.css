@@ -16,21 +16,39 @@
   }
 }
 
-body {
-  /* color: rgb(var(--foreground-rgb));
+/* body { */
+/* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-}
+/* } */
 
-/* Removes arrows from number TextInput  */
-@layer base {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+/* body  {
+  all: initial;
+  all: unset;
+} */
+
+/* .reset-div-styles * {
+  all: initial;
+} */
+
+/* @layer base {
+  h1 {
+    @apply text-2xl;
+    
   }
+  ol,
+  ul {
+    list-style: initial;
+    margin: initial;
+    padding: initial;
+  }
+} */
+
+.reset-all-styles * {
+  /* Reset or override all styles */
+  all: revert !important;
 }
