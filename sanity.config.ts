@@ -4,6 +4,7 @@ import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 import { myStructure } from "./sanity/structures/deskStructure";
 import { codeInput } from "@sanity/code-input";
+import { media, mediaAssetSource } from "sanity-plugin-media";
 // import { CONFIG } from "@/constains";
 import { createImprovedAction } from "./sanity/actions/createImprovedAction";
 
@@ -22,6 +23,8 @@ export default defineConfig({
     }),
     visionTool(),
     codeInput(),
+    // Media Library manager. uncomment the line below to activate
+    // media(),
   ],
 
   schema: {
