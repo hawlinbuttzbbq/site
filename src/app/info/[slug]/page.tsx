@@ -35,7 +35,6 @@ async function getData(slug: string) {
   const query = `*[_type == "page" && slug.current == "${slug}"][0]`;
 
   const data: CompanyPagesType = await client.fetch(query);
-  console.log(JSON.stringify(data, null, 4));
   return data;
 }
 
@@ -79,7 +78,6 @@ export default async function Company({ params }: CompanyPagesProps) {
   const { slug } = params;
 
   const data = await getData(slug);
-  console.log(JSON.stringify(data, null, 3));
 
   return (
     <main className="flex min-h-screen flex-col p-10">
