@@ -12,10 +12,17 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { Menu, X } from "lucide-react";
+import { CompanyPagesType } from "../_types/pagesType";
+import Link from "next/link";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
-export default function HamburgerMenu() {
+interface HamburgerMenuType {
+  companyPages: CompanyPagesType[];
+  siteBaseUrl: string;
+}
+
+export default function HamburgerMenu(props: HamburgerMenuType) {
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -45,10 +52,20 @@ export default function HamburgerMenu() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        <ListItem key={"home-page-123abc"} disablePadding>
+          <ListItemButton>
+            <Link href={props.siteBaseUrl}>
+              <ListItemText primary="Home" className="capitalize" />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+
+        {props.companyPages.map((page, index) => (
+          <ListItem key={page._id} disablePadding>
             <ListItemButton>
-              <ListItemText primary={text} />
+              <Link href={`${props.siteBaseUrl}/info/${page.slug.current}`}>
+                <ListItemText primary={page.title} className="capitalize" />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}

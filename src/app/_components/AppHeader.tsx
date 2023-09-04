@@ -4,9 +4,11 @@ import Link from "next/link";
 import { urlForImage } from "../_lib/sanity";
 import { SiteSettingsType } from "../_types/siteSettings";
 import HamburgerMenu from "./HamburgerMenu";
+import { CompanyPagesType } from "../_types/pagesType";
 
 interface AppHeaderType {
   data: SiteSettingsType;
+  companyPages: CompanyPagesType[];
 }
 
 const AppHeader = (props: AppHeaderType) => {
@@ -64,25 +66,26 @@ const AppHeader = (props: AppHeaderType) => {
             </div>
           </div>
           <div className="absolute right-4 flex flex-row space-x-4  lg:hidden">
-            <HamburgerMenu />
+            <HamburgerMenu
+              companyPages={props.companyPages}
+              siteBaseUrl={url}
+            />
           </div>
         </div>
       </div>
 
       {/* Nav */}
       <div className="hidden md:flex justify-start items-center bg-[url('/images/wood-plank.svg')] h-[50px]">
-        <Link href="/">
-          <span className="text-white mx-4 font-bold">Home</span>
+        <Link href={url}>
+          <span className="text-white mx-4 font-bold capitalize">Home</span>
         </Link>
-        <Link href="/contact">
-          <span className="text-white mx-4 font-bold">Contact Us</span>
-        </Link>
-        <Link href="/about">
-          <span className="text-white mx-4 font-bold">About Us</span>
-        </Link>
-        <Link href="/more-info">
-          <span className="text-white mx-4 font-bold">Share Page</span>
-        </Link>
+        {props.companyPages?.map((page) => (
+          <Link href={`${url}/info/${page.slug.current}`}>
+            <span className="text-white mx-4 font-bold capitalize">
+              {page.title}
+            </span>
+          </Link>
+        ))}
       </div>
 
       {/* Show Header Divider on mobile only */}

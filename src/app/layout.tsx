@@ -9,6 +9,7 @@ import "@fontsource/roboto/700.css";
 import Footer from "./_components/Footer";
 import { SiteSettingsType } from "./_types/siteSettings";
 import { client, urlForImage } from "./_lib/sanity";
+import { CompanyPagesType } from "./_types/pagesType";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,14 @@ async function getSiteSettings() {
   const query = `*[_type == "siteSettings"][0]`;
 
   const data: SiteSettingsType = await client.fetch(query);
+
+  return data;
+}
+
+async function getCompanyPages() {
+  const query = `*[_type == "page"]`;
+
+  const data: CompanyPagesType[] = await client.fetch(query);
 
   return data;
 }
@@ -48,6 +57,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const siteSettings = await getSiteSettings();
+
+  const companyPages = await getCompanyPages();
+
   return (
     <html lang="en">
       {/* Status bar Color for mobile devices */}
@@ -58,7 +70,7 @@ export default async function RootLayout({
       {/* iOS Safari */}
       <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
       <body className={inter.className}>
-        <AppHeader data={siteSettings} />
+        <AppHeader data={siteSettings} companyPages={companyPages} />
         {children}
         <Footer data={siteSettings} />
       </body>
