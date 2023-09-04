@@ -56,7 +56,10 @@ export default async function MenuItemPage({ params }: MenuItemPageProps) {
   return (
     <main className="flex min-h-screen flex-col ">
       <div>
-        <BreadcrumbsNav breadCrumb={menuItem.title} />
+        <BreadcrumbsNav
+          className="mt-5 py-2 md:py-4 md:mt-0"
+          breadCrumb={menuItem.title}
+        />
         <MenuItemDetailsCard data={menuItem} />
         <div className="m-10">
           {sideOptions.map((category) => {

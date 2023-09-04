@@ -89,7 +89,7 @@ const AppHeader = (props: AppHeaderType) => {
       </div>
 
       {/* Show Header Divider on mobile only */}
-      <div className="flex justify-start items-center bg-cover bg-no-repeat bg-[url('/images/wood-surface-two.svg')] h-[20px] md:hidden" />
+      <div className="bg-cover bg-no-repeat bg-[url('/images/wood-surface-two.svg')] h-[20px] md:hidden" />
     </header>
   );
 };

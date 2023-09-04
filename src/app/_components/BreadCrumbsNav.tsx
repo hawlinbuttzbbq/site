@@ -7,6 +7,7 @@ import { CONFIG } from "@/constains";
 
 interface BreadCrumbsNavProps {
   breadCrumb: string;
+  className: string;
 }
 
 export default function BreadcrumbsNav(props: BreadCrumbsNavProps) {
@@ -14,7 +15,7 @@ export default function BreadcrumbsNav(props: BreadCrumbsNavProps) {
   const url = process.env.NODE_ENV === "development" ? baseUrlDev : baseUrl;
 
   return (
-    <div role="presentation" className="py-2 md:py-4">
+    <div role="presentation" className={props?.className}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href={url}>
           <span className="text-red-600 font-bold flex items-center">
