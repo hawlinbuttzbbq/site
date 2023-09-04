@@ -16,7 +16,7 @@ const AppHeader = (props: AppHeaderType) => {
   const url = process.env.NODE_ENV === "development" ? baseUrlDev : baseUrl;
 
   return (
-    <header className="sticky top-0 z-40 border-white h-[110px] md:h-[160px] lg:h-[180px]">
+    <header className="sticky bg-black top-0 z-40 border-white h-[110px] md:h-[160px] lg:h-[180px]">
       <div className="bg-cover bg-no-repeat bg-[url('/images/wood-surface-one.svg')]">
         <div className="container mx-auto px-10 flex justify-center items-center h-full lg:justify-center max-w-none">
           <Link href={url}>
