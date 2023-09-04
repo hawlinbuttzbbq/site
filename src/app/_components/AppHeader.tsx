@@ -75,7 +75,7 @@ const AppHeader = (props: AppHeaderType) => {
       </div>
 
       {/* Nav */}
-      <div className="hidden md:flex justify-start items-center bg-[url('/images/wood-plank.svg')] h-[50px]">
+      <div className="hidden md:flex justify-start items-center bg-cover bg-no-repeat bg-[url('/images/wood-plank.svg')] h-[50px]">
         <Link href={url}>
           <span className="text-white mx-4 font-bold capitalize">Home</span>
         </Link>
@@ -89,7 +89,7 @@ const AppHeader = (props: AppHeaderType) => {
       </div>
 
       {/* Show Header Divider on mobile only */}
-      <div className="flex justify-start items-center bg-[url('/images/wood-plank.svg')] h-[20px] md:hidden" />
+      <div className="flex justify-start items-center bg-cover bg-no-repeat bg-[url('/images/wood-plank.svg')] h-[20px] md:hidden" />
     </header>
   );
 };
