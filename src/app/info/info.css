@@ -1,0 +1,24 @@
+/* Reset or override all styles */
+.rs-all {
+  all: revert !important;
+}
+
+.rs-margin * {
+  margin: revert !important;
+}
+
+.rs-padding * {
+  padding: revert !important;
+}
+
+.rs-list * {
+  list-style: revert !important;
+}
+
+.rs-text h1,
+.rs-text p,
+.rs-text span {
+  font-size: revert !important;
+  /* font-family: revert !important;
+  font-weight: revert !important; */
+}

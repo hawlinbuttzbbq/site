@@ -31,7 +31,7 @@ const AppHeader = (props: AppHeaderType) => {
               />
             </div>
           </Link>
-          <div className="lg:flex items-center space-x-8 absolute right-20">
+          <div className="lg:flex items-center space-x-8 absolute right-10">
             <div className="hidden lg:flex flex-col font-medium text-white font-montserrat">
               <span
                 style={{
@@ -71,16 +71,22 @@ const AppHeader = (props: AppHeaderType) => {
 
       {/* Nav */}
       <div className="hidden md:flex justify-start items-center bg-[url('/images/wood-plank.svg')] h-[50px]">
+        <Link href="/">
+          <span className="text-white mx-4 font-bold">Home</span>
+        </Link>
         <Link href="/contact">
-          <span className="text-white mx-4">Contact Us</span>
+          <span className="text-white mx-4 font-bold">Contact Us</span>
         </Link>
         <Link href="/about">
-          <span className="text-white mx-4">About Us</span>
+          <span className="text-white mx-4 font-bold">About Us</span>
         </Link>
         <Link href="/more-info">
-          <span className="text-white mx-4">Share Page</span>
+          <span className="text-white mx-4 font-bold">Share Page</span>
         </Link>
       </div>
+
+      {/* Show Header Divider on mobile only */}
+      <div className="flex justify-start items-center bg-[url('/images/wood-plank.svg')] h-[20px] md:hidden" />
     </header>
   );
 };

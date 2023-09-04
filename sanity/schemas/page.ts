@@ -60,6 +60,18 @@ export default defineType({
         },
         {
           type: "image",
+          fields: [
+            {
+              type: "string",
+              name: "alt",
+              title: "Important information",
+              description: `All images will maintain their original aspect ratio. If an image has a width below 600 pixels, it will be enlarged proportionally. Please keep in mind that the images will appear on the frontend with their original dimensions. \n Alternative text: Add some text, Some of your visitors cannot see images, 
+                be they blind, color-blind, low-sighted`,
+              options: {
+                isHighlighted: true,
+              },
+            },
+          ],
         },
       ],
     }),
