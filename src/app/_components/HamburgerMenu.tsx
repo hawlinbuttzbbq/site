@@ -52,22 +52,22 @@ export default function HamburgerMenu(props: HamburgerMenuType) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItem key={"home-page-123abc"} disablePadding>
-          <ListItemButton>
-            <Link href={props.siteBaseUrl}>
-              <ListItemText primary="Home" className="capitalize" />
-            </Link>
-          </ListItemButton>
-        </ListItem>
-
-        {props.companyPages.map((page, index) => (
-          <ListItem key={page._id} disablePadding>
+        <Link href={props.siteBaseUrl}>
+          <ListItem key={"home-page-123abc"} disablePadding>
             <ListItemButton>
-              <Link href={`${props.siteBaseUrl}/info/${page.slug.current}`}>
-                <ListItemText primary={page.title} className="capitalize" />
-              </Link>
+              <ListItemText primary="Home" className="capitalize" />
             </ListItemButton>
           </ListItem>
+        </Link>
+
+        {props.companyPages.map((page, index) => (
+          <Link href={`${props.siteBaseUrl}/info/${page.slug.current}`}>
+            <ListItem key={page._id} disablePadding>
+              <ListItemButton>
+                <ListItemText primary={page.title} className="capitalize" />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
