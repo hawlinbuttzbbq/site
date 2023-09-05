@@ -1,12 +1,9 @@
 "use client";
-import * as React from "react";
+import FiberNewIcon from "@mui/icons-material/FiberNew";
+import { CardActionArea, CardActions } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
-import Badge from "@mui/material/Badge";
-import FiberNewIcon from "@mui/icons-material/FiberNew";
 import Link from "next/link";
 import { formatPrice } from "../_utils/formatPrice";
 
@@ -43,26 +40,15 @@ export default function MenuItemCard(props: MenuItemCardProps) {
             image={props.image}
             alt={props.title}
           />
-          <CardContent>
-            <Typography
-              gutterBottom
-              variant="h1"
-              component="h1"
-              className="text-lg font-bold lg:text-2xl"
-            >
-              {props.title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
+          <CardContent sx={{ height: 150, maxHeight: 150 }}>
+            <h1 className="text-lg font-bold lg:text-2xl">{props.title}</h1>
+            <p className="text-sm leading-7 text-gray-600">
               {`Starting at ${formatPrice(props.price)}`}
-              {/* Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica */}
-            </Typography>
+            </p>
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Details
-          </Button>
+        <CardActions sx={{ justifyContent: "flex-end" }}>
+          <button className="ml-2 text-blue-700">Details</button>
         </CardActions>
       </Link>
     </Card>

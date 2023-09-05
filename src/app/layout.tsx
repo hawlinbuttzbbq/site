@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import AppHeader from "./_components/AppHeader";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";

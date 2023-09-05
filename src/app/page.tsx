@@ -1,5 +1,5 @@
 import MenuItemCard from "./_components/MenuItemCard";
-import SectionDivider from "./_components/MenuSectionTitle";
+import CategorySectionDivider from "./_components/CategorySectionDivider";
 import MenuTabNavbar from "./_components/MenuTabNavbar";
 import { client, urlForImage } from "./_lib/sanity";
 import { MenuApiResponse } from "./_types/menuApiResponse";
@@ -31,7 +31,10 @@ export default async function HomePage() {
       <main className="flex min-h-screen flex-col items-center justify-between z-10">
         {menuByCategories.map((category) => (
           <>
-            <SectionDivider divId={category.title} title={category.title} />
+            <CategorySectionDivider
+              divId={category.title}
+              title={category.title}
+            />
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mx-2">
               {/* Filter and merge items */}
               {[
