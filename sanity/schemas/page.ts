@@ -51,6 +51,13 @@ export default defineType({
       type: "datetime",
     }),
     defineField({
+      name: "order",
+      title: "Page Navigation order",
+      description:
+        "This is the order in which this page will show up in the navigation menu.",
+      type: "number",
+    }),
+    defineField({
       name: "content",
       type: "array",
       title: "Content",

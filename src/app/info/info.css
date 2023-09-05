@@ -16,9 +16,14 @@
 }
 
 .rs-text h1,
+.rs-text h2,
+.rs-text h3,
+.rs-text h4,
+.rs-text h5,
+.rs-text h6,
 .rs-text p,
 .rs-text span {
   font-size: revert !important;
-  /* font-family: revert !important;
-  font-weight: revert !important; */
+  font-weight: revert !important;
+  /* font-family: revert !important; */
 }

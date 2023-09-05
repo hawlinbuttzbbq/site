@@ -78,7 +78,7 @@ export default function HamburgerMenu(props: HamburgerMenuType) {
       {(["right"] as const).map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
-            <Menu className="text-white h-8 w-8 md:hidden" />
+            <Menu className="text-white h-8 w-8" />
           </Button>
           <Drawer
             anchor={anchor}

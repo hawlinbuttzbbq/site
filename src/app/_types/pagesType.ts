@@ -2,6 +2,7 @@ export interface CompanyPagesType {
   _type: string;
   _id: string;
   title: string;
+  order: number;
   _updatedAt: Date;
   content: Content[];
   slug: Slug;
