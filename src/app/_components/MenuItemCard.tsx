@@ -36,7 +36,7 @@ export default function MenuItemCard(props: MenuItemCardProps) {
             component="img"
             height="140"
             // TODO: once we have photos in same size then we can adjust the height
-            className="max-h-[150px] lg:max-h-[200px]"
+            className="min-h-[150px] max-h-[150px] lg:max-h-[200px]"
             image={props.image}
             alt={props.title}
           />
